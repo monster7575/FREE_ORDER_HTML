@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+
+/* 서브레이아웃 */
+#subConts { clear:both; position:relative; overflow:hidden; padding:32.5px 10px 0; background:#fff;}
+#settingConts { clear:both; position:relative; overflow:hidden; padding:0 10px; background:#fff;}
+
+/* 그레 높이 */
+.gapGray {height:10px;clear:both;overflow:hidden; background:#f7f8fa;}
+
+
+/* 서브로고 */
+.sub_logo { width:100px; margin:45px auto 30px;}
+.sub_logo img { width:100%;}
+
+
+/* 회원가입 */
+.join_box { background:#f7f8fa; border:1px solid #e4e8ed; padding:0; overflow:hidden; border-radius:7px;}
+.join_box li { width:100%; padding:16px 15px; font-size:0.9rem; font-weight:600; line-height:200%; box-sizing:border-box;}
+.join_box li input {  border-radius:6px; width:100%; height:40px; background-size:100% 40px;  border:1px solid #959595;text-indent: 10px;}
+.join_box li:nth-child(1) { border-bottom:1px solid #e4e8ed; line-height:200%;}
+.join_box li span { display:inline-block; float:right; text-align:right; color:#999; text-decoration:underline; font-weight:normal;}
+.join_check { padding:10px; line-height:30px;}
+
+
+ 
+/* SNS */
+.sns { clear:both; position:relative;}
+.sns_kakao { position:relative; border-radius:6px; background:#ffcd00; width:100%; height:55px; line-height:55px; margin:0 0 10px 0; box-sizing:border-box; text-align:center;}
+.sns_kakao a { font-size:1rem; font-weight:600; color:#444;font-family: 'NanumSquareB'}
+.sns_kakao:before { content:''; position:absolute; width:40px; height:40px; top:17px; left:15px; background:url(http://order.favinet.co.kr/html/fo/img/sub/kakao_icon.png) left top no-repeat; background-size:25px 22px; }
+
+.sns_facebook { position:relative; border-radius:6px; background:#3a589e; width:100%; height:55px; line-height:55px; margin:0 0 10px 0; box-sizing:border-box;text-align:center;}
+.sns_facebook a { font-size:1rem; font-weight:600; color:#fff;font-family: 'NanumSquareB'}
+.sns_facebook:before { content:''; position:absolute; width:40px; height:40px; top:16px; left:15px; background:url(http://order.favinet.co.kr/html/fo/img/sub/face_icon.png) left top no-repeat; background-size:25px 22px; }
+
+.sns_naver { position:relative; border-radius:6px; background:#1dc800; width:100%; height:55px; line-height:55px; margin:0 0 10px 0; box-sizing:border-box;text-align:center;}
+.sns_naver a { font-size:1rem; font-weight:600; color:#fff;font-family: 'NanumSquareB'}
+.sns_naver:before { content:''; position:absolute; width:40px; height:40px; top:12px; left:20px;  background:url(http://order.favinet.co.kr/html/fo/img/sub/naver_icon.png) left top no-repeat; background-size:25px 32px; }
+
+/* 이메일 회원가입 */
+.email_regist { position:relative; border-radius:6px; background:#AAAAAA; width:100%; height:55px; line-height:55px; margin:0 0 10px 0; box-sizing:border-box;text-align:center;}
+.email_regist a { font-size:1rem; font-weight:600; color:#fff;font-family: 'NanumSquareB'}
+
+/* 이메일 로그인 */
+.email_login { position:relative; border-radius:6px; background:#FFFFFF; border:1px solid #959595; width:100%; height:40px; line-height:40px; box-sizing:border-box;text-align:center;}
+.email_login a { font-size:1rem; font-weight:600; color:#989898;font-family: 'NanumSquareB'}
+
+
+
+/* 매장명 */
+.seller_txt { font-size:0.825rem; color:#666666; font-weight:600;font-family: 'NanumSquareB'}
+.seller_ttl { font-size:0.825rem; color:#4266b0; font-weight:600; padding:32.5px 0 0 0;}
+
+.seller_box { padding:10px 0 10px 0;}
+.sellerinput { background:#eff2f8; border:1px solid #4266b0; height:45px; width:100%; box-sizing:border-box; text-indent:10px;}
+
+/* 매장 input */
+.seller_title_input { border-radius:6px; width:100%; height:40px; background-size:100% 40px;  border:1px solid #959595;text-indent: 10px;}
+
+/* 매장 섬네일 이미지 영역 */
+.thumb1 {
+    width: 20%;height:70px;border-radius:3px;border:1px solid #959595;float: right;
+}
+
+.thumb2 {
+    width: 20%;height:70px;border-radius:3px;border:1px solid #959595;float: right;margin-left: 5%;
+}
+
+/* 하단버튼 */
+.footerBtn { position:fixed; bottom:0; width:100%; height:60px; line-height:60px; text-align:center; background:#4166b0; font-size:1.1rem; color:#fff;}
+
+.grayBtn { position:fixed; bottom:0; width:100%; height:60px; line-height:60px; text-align:center; background:#c6c6c6; font-size:1.1rem; font-weight:600; color:#666;}
+
+
+/* 발신내역 */
+.pointList { position:relative; clear:both; padding:20px 0; border-bottom:1px solid #f2f2f2; margin:0 15px;}
+.pointList_ttl { font-size:1rem; color:#666; font-weight:600; letter-spacing:-0.5px;}
+.pointList li { line-height:140%;}
+.pointList li span { color:#ccc; font-size:0.9rem;}
+.pointList_price { width:65px; position:absolute; top:16px; right:0; border:1px solid #4266b0; color:#4266b0; font-size:0.9rem; font-weight:600; border-radius:20px; padding:4px 0; text-align:center;}
+.pointList_regdate { width:200px; position:absolute; top:30px;  color:#000000; font-size:0.9rem; right : 1px; text-align:center;}
+/* new icon */
+
+.pointList li span.new_icon {font-family: 'NanumSquareEB';margin-left: 10px;color: #FF4A22;font-size:0.675rem;vertical-align: top;}
+
+/* 캐시백계좌입력 */
+.bank_ttl { font-size:1rem; color:#4266b0; font-weight:600; padding:30px 0 0 0;}
+.bank_ttl2 { font-size:0.825rem; color:#4266b0; font-weight:600;}
+
+.normalinput { background:#fff; border:1px solid #ddd; height:45px; width:100%; box-sizing:border-box; text-indent:10px; color:#555;}
+.normalinput input::-moz-placeholder {  color: #ccc;  opacity: 1; font-size:12px; text-align:left;}
+.normalinput input:-ms-input-placeholder {  color: #ccc; font-size:12px; text-align:left;}
+.normalinput input::-webkit-input-placeholder { color: #ccc; font-size:12px; text-align:left;}
+
+
+/* 개인정보취급 */
+.person_txt { font-size:0.9rem; color:#444; line-height:150%; margin-bottom:30px;}
+
+
+/* 매장 내용 */
+.counsel_txt { font-size:0.825rem; color:#666666; font-weight:600;}
+.sellerintextarea { border-radius:6px; width:100%; border:1px solid #959595;text-indent:10px;padding-top: 10px;}
+
+/* 설정화면 */
+.nickname_setting { padding-top:20px; padding-bottom:20px;}
+.nickname_setting p { font-size:1rem; color:#444; font-weight:600;}
+.nickname_setting span { background:#fee715; padding:10px 20px; display:inline-block; margin:0 10px 0 0; border-radius:30px;}
+.nickname_setting span img { width:60px; height:15px;}
+
+
+
+/* 설정 테이블 */
+table.tblType { width:100%;}
+table.tblType tbody th { font-size:0.9rem; font-weight:600; color:#444; text-align:left; border-bottom:2px solid #f2f2f2; padding:15px 0;font-family: 'NanumSquareB'}
+table.tblType tbody td { font-size:0.9rem; font-weight:600; color:#444; text-align:left; border-bottom:2px solid #f2f2f2; padding:15px 0;}
+.last { border-bottom:0px solid #f2f2f2 !important; }
+
+.iconLeft { position:relative; width:100px; display:inline-block; background:#f7f8fa; border:1px solid #dddddd; border-radius:30px; height:30px; color:#999; font-size:0.9rem; font-weight:600; padding:0 0 0 20px; box-sizing:border-box;}
+.iconLeft:before { content:''; background:url(http://order.favinet.co.kr/html/fo/img/sub/left_arrow_off.png) left top no-repeat; position:absolute; left:15px; top:8px; width:40px; height:40px; background-size:22px 12px;}
+.iconLeftOn { position:relative; width:100px; display:inline-block; background:#4266b0; border-radius:30px; height:30px; color:#fff; font-size:0.9rem; font-weight:600; padding:0 0 0 20px; box-sizing:border-box;}
+.iconLeftOn:before { content:''; background:url(http://order.favinet.co.kr/html/fo/img/sub/left_arrow_on.png) left top no-repeat; position:absolute; left:15px; top:8px; width:40px; height:40px; background-size:22px 12px;}
+
+
+.iconRight { position:relative; width:100px; display:inline-block; background:#f7f8fa; border:1px solid #dddddd; border-radius:30px; height:30px; color:#999; font-size:0.9rem; font-weight:600; padding:0 0 0 30px; box-sizing:border-box;}
+.iconRight:before { content:''; background:url(http://order.favinet.co.kr/html/fo/img/sub/right_arrow_off.png) left top no-repeat; position:absolute; left:15px; top:8px; width:40px; height:40px; background-size:22px 12px;}
+.iconRightOn { position:relative; width:100px; display:inline-block; background:#4266b0; border:0px solid #dddddd; border-radius:30px; height:30px; color:#fff; font-size:0.9rem; font-weight:600; padding:0 0 0 30px; box-sizing:border-box;}
+.iconRightOn:before { content:''; background:url(http://order.favinet.co.kr/html/fo/img/sub/right_arrow_on.png) left top no-repeat; position:absolute; left:15px; top:8px; width:40px; height:40px; background-size:22px 12px;}
+
+.result_card { clear:both; padding:20px 0 30px 0; overflow:hidden; }
+.result_card_ttl { font-size:1rem; font-weight:600; line-height:200%; color:#555;font-family: 'NanumSquareB'}
+.resCared_conts div { float:left; width:92px; height:57px; margin:0 8px 0 0; float:left; box-sizing:border-box;}
+.resCared_conts div:last-child { margin:0;}
+
+.resCared_add { float:left; overflow:hidden; border:1px dashed #4266b0; border-radius:6px; padding:20px; background:#fff url(http://order.favinet.co.kr/html/fo/img/sub/box_bullet.png) center no-repeat; width:92px; margin:0 8px 0 0; background-size:20px 20px; min-height:57px; box-sizing:border-box;}
+
+.resCared_del { overflow:hidden; position:relative; width:92px; height:57px; border:1px solid #4266b0; border-radius:6px; background-color:transparent; background-size:10px 10px; box-sizing:border-box;}
+.resCared_del input {width:1px; height:1px; left:-9999px; position:absolute; opacity:0;}
+.resCared_del img {/* width:100%; height:100%;*/}
+.card_delBtn { position:absolute; display:inline-block; width:100%; height:100%; background:rgba(0,0,0,0.7)/* url(../img/sub/bullert_x.png) center no-repeat*/; }
+.card_delBtn img { position:absolute; left:50%; top:50%; margin-top:-12px; margin-left:-12px; width:25px; height:25px; }
+.cardName { position:absolute; top:7px; left:0; background:#4266b0; width:100%; text-align:center; color:#fff; display:inline-block;}
+.cardNo {position:absolute; top:30px; left:0; background:#fff; width:100%; color:#4266b0; text-align:center; display:inline-block; font-size:15px; font-weight:600;}
+
+.resCared_save { overflow:hidden; border:1px solid #4266b0; border-radius:6px; /*background:#fff url(../img/sub/box_bullet.png) center no-repeat;*/ background-size:10px 10px; box-sizing:border-box;}
+.resCared_save img { width:100%; height:100%;}
+
+.setting_theme { clear:both; padding:0 10px; overflow:hidden; }
+.setting_theme ul { clear:both; overflow:hidden; }
+.setting_theme ul li { position:relative; float:left; color:#444; font-weight:600; width:100%; box-sizing:border-box; padding:15px 0; border-bottom:2px solid #f2f2f2;  font-family: 'NanumSquareB'}
+
+.more_on:after { content:''; position:absolute; width:100%; height:20px; background:url(http://order.favinet.co.kr/html/fo/img/sub/arrow_on.png) right center no-repeat; right:7px; top:14px; background-size:10px 20px; }
+.more_on { color:#ff4a22; float:right; text-align:right; padding:0 25px 0 0; }
+.more_off:after { content:''; position:absolute; width:100%; height:20px; background:url(http://order.favinet.co.kr/html/fo/img/sub/arrow_off.png) right center no-repeat; right:7px; top:14px; background-size:10px 20px;}
+.more_off { color:#444; float:right; text-align:right; padding:0 25px 0 0; }
+
+.alram_on { float:right; background:#4266b0; border-radius:30px; width:65px; height:30px; color:#fff; display:inline-block; padding:6px; overflow:hidden; box-sizing:border-box;}
+.alram_on span { width:28px; height:17px; display:inline-block; background:#fff; border-radius:30px; float:right;}
+
+.alram_off { float:right; background:#ddd; border-radius:30px; width:65px; height:30px; color:#fff; display:inline-block; padding:6px; overflow:hidden; box-sizing:border-box;}
+.alram_off span { width:28px; height:17px; display:inline-block; background:#fff; border-radius:30px; float:left;}
+

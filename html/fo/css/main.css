@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@charset "UTF-8";
+
+.order_header {
+    position:relative; width:100%; box-sizing:border-box;background:#FFFFFF;
+    border-radius:8px; border:1px solid #dddddd; background:#eff2f8; margin-top:10px; overflow:hidden;
+}
+
+.order_header_phone{
+    margin-top:10px;margin-bottom:10px;text-align: center;
+}
+
+.order_header_time{
+    float: right;margin-right: 20px;
+}
+
+.order_content_box {
+    padding-left: 10px;padding-right: 10px;margin-top: 10px;
+}
+
+.order_content {
+    position:relative; width:100%;  height:100%;  box-sizing:border-box;background:#FFFFFF;min-height: 150px;
+    border-radius:8px; border:1px solid #dddddd; background:#eff2f8; margin-top:10px; overflow:hidden;
+}
+
+.order_content_text {
+    float:left;margin-left: 20px;margin-top: 8px;position: relative;height: 100%;
+}
+
+.order_btn {
+    position:relative; width:100%;  text-align: center; box-sizing:border-box;background:#FFFFFF;
+    border-radius:8px; border:1px solid #dddddd; background:#D61515; margin-top:10px; overflow:hidden;color:#FFFFFF;
+}
+
+.order_btn_text {
+    line-height: 20px;margin-top:10px;margin-bottom:10px;
+}
+
+.order_btn_due {
+    position:relative; width:100%;  text-align: center; box-sizing:border-box;background:#FFFFFF;
+    border-radius:8px; border:1px solid #dddddd; background:#129508; margin-top:10px; overflow:hidden;color:#FFFFFF;
+}
+.dash{
+    border: 0 none;
+    border-top: 1px dashed #898989;
+    background: none;
+    height:0;
+    margin-top: 10px;
+}
+

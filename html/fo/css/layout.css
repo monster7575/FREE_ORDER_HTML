@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+#wrap { position:relative; width:100%; clear:both; display:block;}
+
+#header_wrap { position:relative; width:100%; clear:both; height:60px; z-index:10000; }
+.H_prev_btn { position:absolute; left:10px; top:13px;}
+.H_prev_btn button, .H_setting_btn { width:30px; height:30px;}
+.H_prev_btn img, .H_setting_btn img { width:100%; }
+.H_setting_btn { position:absolute; right:10px; top:13px;}
+
+#subHeader_wrap {  position:relative; width:100%; clear:both; height:58px; z-index:10000; border-bottom:2px solid #e4e8ed;}
+
+#logo { text-align:center; }
+#logo img { width:135px; height:auto; margin:0 auto; padding:18px 0 0 0; box-sizing:border-box;}
+
+/* 페이지 상단 타이틀 */
+#header_ttl { font-size:1.4rem; color:#333; font-weight:600; text-align:center; line-height:60px;}
+
+/* middle button */
+#middleButton { clear:both;margin-top:10px;border-radius:4px;position:relative;overflow:hidden;border:1px solid #4166b0;}
+#middleButton li { position:relative; float:left; width:50%;  height:37.5px; text-align:center; box-sizing:border-box;}
+#middleButton li.li_use { position:relative; float:left; width:50%;  height:37.5px; text-align:center; box-sizing:border-box;background:#FFFFFF;}
+#middleButton li.li_ad { position:relative; float:left; width:50%;  height:37.5px; text-align:center; box-sizing:border-box;background:#4166b0;}
+#middleButton li:nth-child(1) { box-sizing:border-box;}
+#middleButton li button { text-align:center;}
+#middleButton li span.btn_use{ color:#4166b0; font-size:0.9rem; text-align:center; line-height:37.5px; font-weight:600;  font-family: 'NanumSquareB';}
+#middleButton li span.btn_ad{ color:#FFFFFF; font-size:0.9rem; text-align:center; line-height:37.5px; font-weight:600;  font-family: 'NanumSquareB';}
+
+/* footer */
+#mainFooter { clear:both;margin-top:0px;position: fixed;bottom: 0;width: 100%;}
+#mainFooter li { position:relative; float:left; width:50%; background:#4166b0; height:60px; text-align:center; box-sizing:border-box;}
+#mainFooter li:nth-child(1) { box-sizing:border-box; border-right:1px solid #fff;}
+#mainFooter li span { color:#fff; font-size:1rem; text-align:center; line-height:60px; font-weight:600;}
+#mainFooter li a { text-align:center;}
+
+.point_icon { padding:0 0 0 30px;}
+.cash_icon { padding:0 0 0 35px;}
+.point_icon:before { content:''; position:absolute; top:8px; left:25px; background:url(http://order.favinet.co.kr/html/fo/img/main/point_icon.png) left center no-repeat; display:inline-block; background-size:30px 30px; width:27px; height:27px; padding:15px 0 0 10px;}
+.cash_icon:before { content:''; position:absolute; top:8px; left:25px; background:url(http://order.favinet.co.kr/html/fo/img/main/cash_icon.png) left center no-repeat; display:inline-block; background-size:30px 30px; width:30px; height:30px; padding:15px 0 0 10px;}
