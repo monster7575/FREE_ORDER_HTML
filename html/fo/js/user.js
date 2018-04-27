@@ -3,11 +3,56 @@ $(window).ready(function(){
 
 });
 
+function emailJoin()
+{
+    window.location.replace('/srv/seller/mobile/regist');
+}
 
+function emailLogin(email, passwd)
+{
+    window.location.replace('freeorder://action?name=get_seller');
+    var json = {email : email, passwd : passwd, auth : 'E'};
+
+    //setSnsInfo(json);
+
+    userSnsCheck(json, function(data){
+
+        alert('userSnsCheck : ' + JSON.stringify(data));
+        window.location.replace('freeorder://action?name=stop_loading');
+        if(data.result < 0)
+        {
+            if(data.result == -1)
+            {
+                alert('등록되 계정이 없습니다.');
+            }
+            else if(data.result == -2)
+            {
+                alert(data.error);
+            }
+            else
+            {
+                userLogin(json, function(data){
+
+                    if(data.result == -1028)            //회원탈퇴 5일전
+                    {
+                        window.location.replace('freeorder://action?name=stop_loading');
+                        alert(data.error);
+                    }
+                    else
+                    {
+                        userUpdate(data, null);
+                    }
+                });
+            }
+        }
+
+    });
+}
 
 //SNS 로그인 시도 전 동의 체크
 function snsLogin(sns)
 {
+    window.location.replace('freeorder://action?name=get_seller');
 
     if(sns == 'F')
     {
@@ -24,13 +69,25 @@ function snsLogin(sns)
     }
 }
 
+var phonenb;
+var gcmtoken;
+//Call By Native
+function setSeller(phonenb, token)
+{
+    console.log('phonenb : ' + phonenb);
+    console.log('gcmtoken : ' + token);
+
+    this.phonenb = phonenb;
+    this.gcmtoken = token;
+    alert(JSON.stringify(this.phonenb + '-' + this.gcmtoken));
+}
 
 function userUpdate(update, callback)
 {
 
-    //alert('userUpdate : ' + JSON.stringify(update));
+    //alert('before userUpdate : ' + JSON.stringify(update));
     var UserModel = Backbone.Model.extend({
-        url: CMS.proxypath+"/srv/user/api/update"
+        url:"/srv/seller/api/update"
     });
 
     var user = new UserModel();
@@ -42,7 +99,7 @@ function userUpdate(update, callback)
         success: function(res) {
             window.location.replace('freeorder://action?name=stop_loading');
             var json = JSON.parse(JSON.stringify(res));
-            //alert('json : ' + JSON.stringify(json));
+            //alert('after userUpdate : ' + JSON.stringify(json));
             if(json.result == 1)
             {
                 var data;
@@ -96,10 +153,13 @@ function userSnsCheck(json, callback)
 {
     window.location.replace('freeorder://action?name=start_loading');
     var UserModel = Backbone.Model.extend({
-        url: "/srv/seller/api/select/snsid"
+        url: "/srv/seller/api/select"
     });
 
     var user = new UserModel();
+
+    json.phonenb = this.phonenb;
+    json.gcmtoken = this.gcmtoken;
 
     user.fetch({
         contentType : 'application/json; charset=utf-8',
@@ -108,7 +168,7 @@ function userSnsCheck(json, callback)
         success: function(res) {
 
             var resObj = JSON.parse(JSON.stringify(res));
-
+            //alert('userSnsCheck : ' + JSON.stringify(resObj));
             if(callback)
                 callback(resObj);
 
@@ -128,7 +188,6 @@ function userLogin(json, callback)
         url: "/srv/seller/api/login"
     });
 
-    json.route = 'S';
     var user = new UserModel();
 
     user.fetch({
@@ -167,72 +226,28 @@ function userLogin(json, callback)
 
 }
 
-function setSnsInfo(json)
-{
-
-    $('#snsid').val(json.snsid);
-    $('#sns').val(json.sns);
-    $('#email').val(json.email);
-    $('#phonenb').val(json.phonenb);
-    $('#gcmtoken').val(json.gcmtoken);
-    $('#auth').val(json.auth);
-    $("#mainForm").submit();
-
-}
-
-
 function userProccessComplete(user, isSign)
 {
     window.location.replace('freeorder://action?name=stop_loading');
-   // alert('userProccessComplete isSign : ' + JSON.stringify(isSign));
-   // alert('userProccessComplete user : ' + JSON.stringify(user));
+    //alert('userProccessComplete isSign : ' + JSON.stringify(isSign));
+    //alert('userProccessComplete user : ' + JSON.stringify(user));
 
-    var nick = user.nick;
     var uobjid = user.idx;
 
     var path = $(location).attr('pathname');
 
     if(isSign)
     {
-        if(path.indexOf('login') > 0 || path.indexOf('nick') > 0 || path.indexOf('guide') > 0) {
-            location.replace('/srv/user/mobile/main?cid='+user.cid);          //로그인, 회원가입시만 반응
+        if(path.indexOf('login') > 0) {
+            window.location.replace('freeorder://action?name=go_main&phonenb='+this.phonenb);
         }
     }
     else
     {
 
-        window.location.replace('touchcashjs://stop_loading');
-        if(path.indexOf('login') > 0 || path.indexOf('guide') > 0)
-        {
-            if(!nick)
-                location.replace(CMS.proxypath+'/srv/user/mobile/update/nick');
-            else
-            {
-                location.replace(CMS.proxypath+'/srv/user/mobile/main?cid='+user.cid);
-                /*
-                if(cards)
-                {
-                    if(cards.length == 0)
-                        location.replace('touchcashjs://card_register?isSignup=1&uobjid='+uobjid);
-                    else
-                        location.replace(CMS.proxypath+'/srv/user/mobile/main?cid='+user.cid);
-                }
-                else
-                    location.replace('touchcashjs://card_register?isSignup=1&uobjid='+uobjid);
-                */
-            }
-            return;
-        }
-        //alert('userProccessComplete nick : ' + nick);
-        if(path.indexOf('nick') > 0 && nick)
-        {
-           //alert('userProccessComplete cards : ' + cards.length);
-            if(cards.length == 0)
-                location.replace('touchcashjs://card_register?isSignup=1&uobjid='+uobjid);
-            else
-                location.replace(CMS.proxypath+'/srv/user/mobile/main?cid='+user.cid);
-            return;
-        }
+        window.location.replace('freeorder://action?name=stop_loading');
+        location.replace('/srv/seller/mobile/insert');
+
     }
 
 }

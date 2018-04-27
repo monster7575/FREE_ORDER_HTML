@@ -61,8 +61,44 @@ function statusChangeCallback(response) {
 function showDetails(at) {
     FB.api('/me', {fields: 'id,name,email,gender,birthday'}, function(details) {
 
-            var json = {'snsid' : details.id, 'sns' : 'F', 'email' : details.email, 'phonenb' : $('#phonenb').val(), 'gcmtoken' : $('#token').val(), 'auth' : 'S'};
-            setSnsInfo(json);
+            var json = {'snsid' : details.id, 'sns' : 'F', 'email' : details.email, 'auth' : 'S'};
+            userSnsCheck(json, function(data){
+
+                //alert('userSnsCheck : ' + JSON.stringify(data));
+                if(data.result < 0)
+                {
+                    if(data.result == -2)
+                    {
+                        window.location.replace('freeorder://action?name=stop_loading');
+                        alert(data.error);
+                    }
+                    else
+                    {
+                        userInsert(json, function(data){
+
+                            if(data.result > 0)
+                            {
+                                userLogin(json, null);
+                            }
+                        });
+                    }
+                }
+                else
+                {
+                    userLogin(json, function(data){
+
+                        if(data.result == -1028)            //회원탈퇴 5일전
+                        {
+                            window.location.replace('freeorder://action?name=stop_loading');
+                            alert(data.error);
+                        }
+                        else
+                        {
+                            userUpdate(data, null);
+                        }
+                    });
+                }
+            });
     });
 }
 

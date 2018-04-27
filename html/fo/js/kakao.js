@@ -11,9 +11,45 @@ function loginWithKakao() {
 
                     var json = {'snsid' : res.id, 'sns' : 'K', 'email' : res.kaccount_email, 'auth' : 'S'};
 
-                   setSnsInfo(json);
+                   //setSnsInfo(json);
+                    alert('userSnsCheck : ' + JSON.stringify(json));
+                    userSnsCheck(json, function(data){
 
+                        //alert('userSnsCheck : ' + JSON.stringify(data));
+                        if(data.result < 0)
+                        {
+                            if(data.result == -2)
+                            {
+                                window.location.replace('freeorder://action?name=stop_loading');
+                                alert(data.error);
+                            }
+                            else
+                            {
+                                userInsert(json, function(data){
 
+                                    if(data.result > 0)
+                                    {
+                                        userLogin(json, null);
+                                    }
+                                });
+                            }
+                        }
+                        else
+                        {
+                            userLogin(json, function(data){
+
+                                if(data.result == -1028)            //회원탈퇴 5일전
+                                {
+                                    window.location.replace('freeorder://action?name=stop_loading');
+                                    alert(data.error);
+                                }
+                                else
+                                {
+                                    userUpdate(data, null);
+                                }
+                            });
+                        }
+                    });
                 },
                 fail: function(error) {
                     //alert(JSON.stringify(error));

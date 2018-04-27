@@ -34,7 +34,45 @@ function naverSignInCallback() {
     var token = naver_id_login.getAccessToken();
 	//startUserLogin(json);
 
-    setSnsInfo(json);
+    //setSnsInfo(json);
+
+    userSnsCheck(json, function(data){
+
+        //alert('userSnsCheck : ' + JSON.stringify(data));
+        if(data.result < 0)
+        {
+            if(data.result == -2)
+            {
+                window.location.replace('freeorder://action?name=stop_loading');
+                alert(data.error);
+            }
+            else
+            {
+                userInsert(json, function(data){
+
+                    if(data.result > 0)
+                    {
+                        userLogin(json, null);
+                    }
+                });
+            }
+        }
+        else
+        {
+            userLogin(json, function(data){
+
+                if(data.result == -1028)            //회원탈퇴 5일전
+                {
+                    window.location.replace('freeorder://action?name=stop_loading');
+                    alert(data.error);
+                }
+                else
+                {
+                    userUpdate(data, null);
+                }
+            });
+        }
+    });
 
 }
 
