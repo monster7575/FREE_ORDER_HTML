@@ -17,7 +17,7 @@ function emailLogin(email, passwd)
 
     userSnsCheck(json, function(data){
 
-        alert('userSnsCheck : ' + JSON.stringify(data));
+        //alert('userSnsCheck : ' + JSON.stringify(data));
         window.location.replace('freeorder://action?name=stop_loading');
         if(data.result < 0)
         {
@@ -79,7 +79,7 @@ function setSeller(phonenb, token)
 
     this.phonenb = phonenb;
     this.gcmtoken = token;
-    alert(JSON.stringify(this.phonenb + '-' + this.gcmtoken));
+    //alert(JSON.stringify(this.phonenb + '-' + this.gcmtoken));
 }
 
 function userUpdate(update, callback)

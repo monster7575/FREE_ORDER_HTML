@@ -27,6 +27,7 @@
     float:left;margin-left: 20px;margin-top: 8px;position: relative;height: 100%;
 }
 
+/* 접수 대기 */
 .order_btn {
     position:relative; width:100%;  text-align: center; box-sizing:border-box;background:#FFFFFF;
     border-radius:8px; border:1px solid #dddddd; background:#D61515; margin-top:10px; overflow:hidden;color:#FFFFFF;
@@ -36,10 +37,23 @@
     line-height: 20px;margin-top:10px;margin-bottom:10px;
 }
 
-.order_btn_due {
+/* 접수 완료 */
+.order_btn_start {
     position:relative; width:100%;  text-align: center; box-sizing:border-box;background:#FFFFFF;
     border-radius:8px; border:1px solid #dddddd; background:#129508; margin-top:10px; overflow:hidden;color:#FFFFFF;
 }
+
+/* 배송 중 */
+.order_btn_due {
+    position:relative; width:100%;  text-align: center; box-sizing:border-box;background:#FFFFFF;
+    border-radius:8px; border:1px solid #dddddd; background:#4266b0; margin-top:10px; overflow:hidden;color:#FFFFFF;
+}
+
+.order_btn_end {
+    position:relative; width:100%;  text-align: center; box-sizing:border-box;background:#FFFFFF;
+    border-radius:8px; border:1px solid #dddddd; background:#b3b7bc; margin-top:10px; overflow:hidden;color:#FFFFFF;
+}
+
 .dash{
     border: 0 none;
     border-top: 1px dashed #898989;

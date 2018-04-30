@@ -12,7 +12,7 @@ function loginWithKakao() {
                     var json = {'snsid' : res.id, 'sns' : 'K', 'email' : res.kaccount_email, 'auth' : 'S'};
 
                    //setSnsInfo(json);
-                    alert('userSnsCheck : ' + JSON.stringify(json));
+                    //alert('userSnsCheck : ' + JSON.stringify(json));
                     userSnsCheck(json, function(data){
 
                         //alert('userSnsCheck : ' + JSON.stringify(data));
